@@ -24,3 +24,13 @@ function goTo(href) {
         window.location.href = href;
     }, 500);
 }
+
+$('.title-container').hover(function() {
+    $(".tooltiptext").css("opacity", "1");
+    $('.tooltiptext').addClass('active');
+  }, function() {
+    $(".tooltiptext").css("opacity", "0");
+    setTimeout(function() {
+        $('.tooltiptext').removeClass('active');
+      }, 300);
+  });

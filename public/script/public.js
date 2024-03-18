@@ -1,5 +1,10 @@
 darkModeEnabled = false;
 if (getCookie("darkModeEnabled") == "1") {
+    if(darkModeEnabled) {
+        document.getElementById("titleTooltip").textContent = "Go Dark";
+    } else {
+        document.getElementById("titleTooltip").textContent = "Go Bright";
+    }
     toggleDarkMode();
 }
 
@@ -16,6 +21,11 @@ function toggleDarkMode() {
     document.getElementById("content").classList.toggle("content-dark");
     document.body.classList.toggle("body-dark");
     document.getElementsByClassName("font-outer")[0].classList.toggle("font-outer-dark");
+    if(darkModeEnabled) {
+        document.getElementById("titleTooltip").textContent = "Go Dark";
+    } else {
+        document.getElementById("titleTooltip").textContent = "Go Bright";
+    }
     darkModeEnabled = !darkModeEnabled;
     updateDarkModeCookie();
 }

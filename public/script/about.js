@@ -32,16 +32,6 @@ function typeWriter(text, i, textarea) {
 var textToType =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 $(document).ready(function () {
-    $('.title-container').hover(function() {
-        $(".tooltiptext").css("opacity", "1");
-        $('.tooltiptext').addClass('active');
-      }, function() {
-        $(".tooltiptext").css("opacity", "0");
-        setTimeout(function() {
-            $('.tooltiptext').removeClass('active');
-          }, 300);
-      });
-
     var textarea = $("#aboutTextArea");
     textarea.val("");
     typeWriter(textToType, 0, textarea);
