@@ -1,76 +1,75 @@
 <!DOCTYPE html>
 
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
 
-<head>
+        <title>03lenio</title>
 
-  <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>03lenio</title>
+        <meta name="description" content="" />
 
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="style/public.css" />
 
-  <meta name="description" content="" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
 
-  <link rel="stylesheet" type="text/css" href="style/public.css" />
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png" />
 
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+        <meta name="theme-color" content="" />
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="manifest" href="manifest.webmanifest" />
 
-  <meta name="theme-color" content="">
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX
+"
+        ></script>
 
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-  <link rel="manifest" href="manifest.webmanifest">
+            function gtag() {
+                dataLayer.push(arguments);
+            }
 
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX
-'></script>
+            gtag("js", new Date());
 
-  <script>
+            gtag("config", "G-XXXXXXXXXX");
+        </script>
+    </head>
 
-    window.dataLayer = window.dataLayer || [];
+    <body>
+        <div id="fadein" class="fadein"></div>
+        <div id="fadeout" class="fadeout" hidden></div>
+        <div id="content" class="content">
+            <div class="title-container" onclick="toggleDarkMode();">
+                <span class="font-outer">03LENIO</span>
+                <span class="font-inner">03LENIO</span>
+            </div>
 
-    function gtag(){dataLayer.push(arguments);}
+            <p class="topic" onclick="goTo('about.html')">About Me</p>
+            <p class="topic">My Projects</p>
+            <p class="topic">Socials</p>
+        </div>
+        <div id="loader-wrapper">
+            <div class="loader"></div>
+        </div>
+        <footer>
+            <small>
+                ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                03lenio. All Rights Reserved.
+            </small>
+        </footer>
 
-    gtag('js', new Date());
-
-  
-
-    gtag('config', 'G-XXXXXXXXXX');
-
-  </script>
-
-</head>
-
-<body>
-
-  <div id="fadein"></div>
-  <div id="content" class="content">
-    <div class="title-container" onclick="toggleDarkMode();">
-      <span class="font-outer">03LENIO</span>
-      <span class="font-inner">03LENIO</span>
-    </div>
-  
-    <p class="topic">About Me</p>
-    <p class="topic">My Projects</p>
-    <p class="topic">Socials</p>
-  </div>
-  <div id="loader-wrapper">
-    
-    <div class="loader"></div>
-
-  </div>
-  <footer>
-
-    <small>© <script>document.write(new Date().getFullYear())</script> 03lenio. All Rights Reserved.</small>
-
-  </footer>
-
-<!--
+        <!--
           _____                    _____                    _____                _____                            _____                    _____                    _____                            _____                            _____                   _______                   _____                    _____                            _____                    _____                    _____                    _____          
          /\    \                  /\    \                  /\    \              /\    \                          /\    \                  /\    \                  /\    \                          /\    \                          /\    \                 /::\    \                 /\    \                  /\    \                          /\    \                  /\    \                  /\    \                  /\    \         
         /::\____\                /::\____\                /::\    \            /::\    \                        /::\    \                /::\    \                /::\    \                        /::\____\                        /::\    \               /::::\    \               /::\    \                /::\____\                        /::\____\                /::\    \                /::\    \                /::\    \        
@@ -95,34 +94,35 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                             
     -->
 
-  <script src="https://code.jquery.com/jquery-3.7.1
-.min.js" crossorigin="anonymous"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.7.1
+.min.js"
+            crossorigin="anonymous"
+        ></script>
 
-  <script type="text/javascript">
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function () {
+                var elements = document.querySelectorAll(".topic");
+                elements.forEach(function (element, index) {
+                    setTimeout(function () {
+                        element.classList.add("faded-in");
+                    }, index * 300);
+                });
+            });
+            window.onload = function () {
+                setTimeout(function () {
+                    document.getElementById("fadein").remove();
+                }, 1000);
+            };
+        </script>
 
-  window.onload = function(){
+        <script type="text/javascript">
+            $(window).on("load", function () {
+                $("#loader-wrapper").fadeOut(700);
+            });
+        </script>
 
-    setTimeout(function(){
-
-      document.getElementById("fadein").remove();
-
-    },1000);
-
-  };
-
-  </script>
-
-  <script type="text/javascript">
-
-    $(window).on('load', function() {
-
-      $("#loader-wrapper").fadeOut(700);
-
-    });
-
-  </script>
-
-  <script src="script/public.js"></script>
-
-</body>
+        <script src="script/general.js"></script>
+        <script src="script/public.js"></script>
+    </body>
 </html>

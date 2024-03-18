@@ -28,7 +28,7 @@ body {
 }
 
 .font-outer {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 5em;
   font-weight: lighter;
   color: #020202;
@@ -45,7 +45,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 5em;
   font-weight: bolder;
-  transform: scale(0.95,0.7);
+  transform: scale(0.95, 0.7);
   line-height: 0;
 }
 
@@ -54,6 +54,12 @@ body {
   font-size: 1.3em;
   margin-bottom: 1em;
   cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.topic.faded-in {
+  opacity: 1;
 }
 
 .topic:hover {
@@ -69,29 +75,31 @@ footer {
   text-align: center;
 }
 
-body, .content, .font-outer, footer {
+body,
+.content,
+.font-outer,
+footer {
   transition: background-color 1s ease;
 }
-
 
 @keyframes fadeinall {
   0% {
       opacity: 1;
- }
+  }
   97% {
       opacity: 0;
- }
+  }
   98% {
       opacity: 0;
       -webkit-transform: translateY(0);
       transform: translateY(0);
- }
+  }
   100% {
       opacity: 0;
       -webkit-transform: translateY(-100%);
       transform: translateY(-100%);
       z-index: -1;
- }
+  }
 }
 
 #fadein {
@@ -104,7 +112,6 @@ body, .content, .font-outer, footer {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
-  background-color: #FFFFFF;
   z-index: 999;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -114,17 +121,60 @@ body, .content, .font-outer, footer {
   animation-delay: 0.3s;
 }
 
+.fadein {
+  background-color: white;
+}
+
+.fadein-dark {
+  background-color: black;
+}
+
+#fadeout {
+  opacity: 0; /* Changed from 1 to 0 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  z-index: 999;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation: fadeoutall 0.5s normal both; /* Changed animation name */
+  animation: fadeoutall 1s normal both; /* Changed animation name */
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.fadeout {
+  background-color: white;
+}
+
+.fadeout-dark {
+  background-color: black;
+}
+
+@keyframes fadeoutall {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+}
+
 @keyframes rotation {
   0% {
       transform: rotate(0deg);
- }
+  }
   100% {
       transform: rotate(360deg);
- }
+  }
 }
 
 #loader-wrapper {
-  background-color: #FFFFFF;
   position: fixed;
   top: 0;
   left: 0;
@@ -134,15 +184,24 @@ body, .content, .font-outer, footer {
   text-align: center;
 }
 
+.loader-wrapper-dark {
+  background-color: black;
+}
+
 .loader {
   width: 40px;
   height: 40px;
-  border: 5px solid #000000;
+  border: 5px solid black;
   border-bottom-color: transparent;
   border-radius: 50%;
-  margin-top:calc(50vh - 20px);
+  margin-top: calc(50vh - 20px);
   display: inline-block;
   box-sizing: border-box;
   -webkit-animation: rotation 1s linear infinite;
   animation: rotation 1s linear infinite;
+}
+
+.loader-dark {
+  border: 5px solid white;
+  border-bottom-color: black;
 }
