@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>My Projects</title>
+
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+        <meta name="description" content="" />
+
+        <link rel="stylesheet" type="text/css" href="style/public.css" />
+        <link rel="stylesheet" type="text/css" href="style/projects.css" />
+
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png" />
+
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+        <meta name="theme-color" content="" />
+
+        <link rel="manifest" href="manifest.webmanifest" />
+
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX
+"
+        ></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag("js", new Date());
+
+            gtag("config", "G-XXXXXXXXXX");
+        </script>
+    </head>
+
+    <body>
+        <div id="fadein" class="fadein"></div>
+        <div id="fadeout" class="fadeout" hidden></div>
+        <div id="content" class="content">
+            <div class="title-container" onclick="back()">
+                <span class="font-inner-small">My Projects</span>
+                <span class="tooltiptext" id="titleTooltip">Back</span>
+            </div>
+            <div class="carousel-wrapper">
+                <div class="carousel">
+                    <div class="carousel-container">
+                        <div class="project-card">
+                            <img src="project1.jpg" alt="Project 1">
+                            <p>Project 1 description</p>
+                        </div>
+                        <div class="project-card">
+                            <img src="project2.jpg" alt="Project 2">
+                            <p>Project 2 description</p>
+                        </div>
+                        <div class="project-card">
+                            <img src="project3.jpg" alt="Project 3">
+                            <p>Project 3 description</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Navigation Buttons -->
+                <button class="prev-btn" onclick="prevSlide()">&#10094;</button>
+                <button class="next-btn" onclick="nextSlide()">&#10095;</button>
+            </div>
+            
+        </div>
+    </body>
+      
+
+       
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function () {
+                console.log(document.getElementById("fadein").className)
+                var elements = document.querySelectorAll(".topic");
+                elements.forEach(function (element, index) {
+                    setTimeout(function () {
+                        element.classList.add("faded-in");
+                    }, index * 300);
+                });
+            });
+            window.onload = function () {
+                setTimeout(function () {
+                    document.getElementById("fadein").remove();
+                }, 1000);
+            };
+        </script>
+
+        <footer>
+            <small>
+                ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                03lenio. All Rights Reserved.
+            </small>
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+            <script src="script/general.js"></script>
+            <script src="script/projects.js"></script>
+        </footer>
+</html>

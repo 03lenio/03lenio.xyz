@@ -54,12 +54,40 @@
             </div>
 
             <p class="topic" onclick="goTo('about.html')">About Me</p>
-            <p class="topic">My Projects</p>
+            <p class="topic" onclick="goTo('projects.html')">My Projects</p>
             <p class="topic">Socials</p>
+            <p class="topic">Music</p>
         </div>
         <div id="loader-wrapper">
             <div class="loader"></div>
         </div>
+        </body> 
+     
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function () {
+                var elements = document.querySelectorAll(".topic");
+                elements.forEach(function (element, index) {
+                    setTimeout(function () {
+                        element.classList.add("faded-in");
+                    }, index * 300);
+                });
+            });
+            window.onload = function () {
+                setTimeout(function () {
+                    document.getElementById("fadein").remove();
+                }, 1000);
+            };
+        </script>
+
+        <script type="text/javascript">
+            $(window).on("load", function () {
+                $("#loader-wrapper").fadeOut(700);
+            });
+        </script>
+
+       
         <footer>
             <small>
                 ©
@@ -68,6 +96,8 @@
                 </script>
                 03lenio. All Rights Reserved.
             </small>
+            <script src="script/general.js"></script>
+            <script src="script/public.js"></script>
         </footer>
 
         <!--
@@ -95,35 +125,4 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                             
     -->
 
-        <script
-            src="https://code.jquery.com/jquery-3.7.1
-.min.js"
-            crossorigin="anonymous"
-        ></script>
-
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", function () {
-                var elements = document.querySelectorAll(".topic");
-                elements.forEach(function (element, index) {
-                    setTimeout(function () {
-                        element.classList.add("faded-in");
-                    }, index * 300);
-                });
-            });
-            window.onload = function () {
-                setTimeout(function () {
-                    document.getElementById("fadein").remove();
-                }, 1000);
-            };
-        </script>
-
-        <script type="text/javascript">
-            $(window).on("load", function () {
-                $("#loader-wrapper").fadeOut(700);
-            });
-        </script>
-
-        <script src="script/general.js"></script>
-        <script src="script/public.js"></script>
-    </body>
 </html>

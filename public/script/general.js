@@ -14,7 +14,7 @@ function back() {
     fadeoutElement.style.display = "block";
     setTimeout(function () {
         history.back();
-    }, 500);
+    }, 300);
 }
 
 function goTo(href) {
@@ -22,7 +22,7 @@ function goTo(href) {
     fadeoutElement.style.display = "block";
     setTimeout(function () {
         window.location.href = href;
-    }, 500);
+    }, 300);
 }
 
 $('.title-container').hover(function() {

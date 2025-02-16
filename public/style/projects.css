@@ -1,0 +1,156 @@
+.title-container .tooltiptext {
+  visibility: hidden;
+  width: 3em;
+  bottom: -1em;
+  left: 5.2em;
+  opacity: 0;
+  background-color: transparent;
+  font-family: Consolas, sans-serif;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: relative;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+
+.tooltiptext.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Carousel Wrapper */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;  /* Ensures it doesn't exceed 600px */
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Carousel Container */
+.carousel-container {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Project Cards */
+.project-card {
+  min-width: 100%;
+  box-sizing: border-box;
+  background: white;
+  padding: 15px;
+}
+
+.project-card-dark {
+  background: rgb(29, 28, 28);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Navigation Buttons (Initially Hidden) */
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+
+  font-size: 20px;
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  opacity: 0; /* Hidden initially */
+}
+
+.prev-btn-dark, .next-btn-dark {
+  color: black;
+}
+
+/* Move buttons off-screen */
+.prev-btn { left: 40px; }
+.next-btn { right: 40px; }
+
+/* Hover Effect: Buttons Slide In */
+.carousel-wrapper:hover .prev-btn {
+  opacity: 1;
+  color: black;
+  transform: translateY(-50%) translateX(-250%);
+}
+
+.carousel-wrapper:hover .next-btn {
+  opacity: 1;
+  color: black;
+  transform: translateY(-50%) translateX(250%);
+}
+
+.carousel-wrapper:hover .prev-btn-dark {
+  opacity: 1;
+  color: white;
+  transform: translateY(-50%) translateX(-250%);
+}
+
+.carousel-wrapper:hover .next-btn-dark {
+  opacity: 1;
+  color: white;
+  transform: translateY(-50%) translateX(250%);
+}
+
+
+
+.prev-btn:hover, .next-btn:hover {
+  background: transparent;
+}
+
+/* 🔹 Responsive Styles */
+@media screen and (max-width: 768px) {
+  .carousel {
+      width: 60%;
+  }
+
+  .prev-btn, .next-btn {
+      padding: 8px 12px;
+      font-size: 18px;
+  }
+
+  .carousel-wrapper:hover .prev-btn {
+    transform: translateY(-50%) translateX(-30%);
+  }
+  
+  .carousel-wrapper:hover .next-btn {
+    transform: translateY(-50%) translateX(30%);
+  }
+  
+}
+
+@media screen and (max-width: 480px) {
+  .carousel {
+      max-width: 100%; /* Take full width on very small screens */
+  }
+
+  .prev-btn, .next-btn {
+      padding: 6px 10px;
+      font-size: 16px;
+  }
+}
